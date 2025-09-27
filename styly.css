@@ -1,0 +1,483 @@
+/* ---------- fresh responsive styles (replace entire styly.css) ---------- */
+
+/* reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* variables (simple) */
+:root {
+  --bg-dark: rgb(2, 58, 0);
+  --gold: rgb(179, 147, 61);
+  --accent: #ae9139;
+  --black: #000;
+  --main-width: 900px;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+/* ========== HEADER ========== */
+.logo {
+  width: 100%;
+  background: var(--bg-dark);
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* responsive logo image: large on desktop, constrained on small screens */
+.logo img {
+  display: block;
+  margin: 0 auto;
+  width: 420px;      /* desktop target */
+  max-width: 90%;    /* never overflow on small screens */
+  height: auto;
+}
+
+/* NAV */
+nav {
+  background: var(--gold);
+  border: 5px solid var(--black);
+}
+
+/* keep desktop width 900px but allow shrink on narrow viewports */
+nav ul {
+  width: var(--main-width);
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* keep original float layout on desktop to preserve exact look */
+nav ul li {
+  list-style: none;
+  width: 200px;
+  float: left;
+  border: 5px solid var(--black);
+  text-align: center;
+  margin: 5px 50px;
+  padding: 3px 20px;
+  line-height: 40px;
+  background: #fff;
+  font-size: 20px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 35px;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+nav ul li:hover { background: rgb(100, 83, 34); }
+nav ul li a:hover { color: white; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ========== TUTORIAL ========== */
+/* container */
+.tutorial {
+  width: 100%;
+  background: var(--bg-dark);
+  border: 5px solid var(--black);
+  border-top: none;
+  position: relative; /* for coin/cash absolute placement */
+  padding: 18px 0 10px 0;
+  min-height: 275px;
+}
+
+/* coin & cash: absolute in corners (so they don't push or overlap flow) */
+#coin,
+#cash {
+  position: absolute;
+  top: 14px;
+  width: 10%;
+  max-width: 120px;
+  height: auto;
+}
+
+/* spacing similar to original: big offsets on desktop */
+#coin { right: 180px; }
+#cash { left: 180px; }
+
+/* podtutorial keeps central block and has top padding so it won't be hidden */
+.podtutorial {
+  width: 50%;
+  max-width: 760px;
+  height: 275px;
+  margin: 0 auto;
+  padding-top: 40px; /* space for coin/cash */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* headline image and text */
+.nadpis {
+  width: 375px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto 6px auto;
+  position: relative;
+  top: 0;
+}
+
+.tutorial p, .podtutorial p {
+  font-family: var(--font-sans);
+  color: #fff;
+  font-size: 20px;
+  margin: 12px auto;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+strong { color: var(--accent); }
+
+/* ========== MAIN / BODY ========== */
+.kontajnr {
+  width: var(--main-width);
+  max-width: 95%;
+  margin: 120px auto 0 auto;
+}
+
+/* each content block */
+.obsah {
+  height: 525px;
+  border-bottom: 3px solid var(--black);
+  padding: 10px 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* headings */
+h1 {
+  width: 200px;
+  margin: 10px auto;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 70px;
+  color: red;
+  text-align: center;
+}
+.blue { color: rgb(45,66,255); }
+.yellow { color: rgb(255,174,0); }
+.green { color: rgb(0,107,14); }
+
+/* logos - constrain sizes and preserve floats on desktop */
+.logoweb {
+  float: left;
+  position: relative;
+  margin: 10px 0 5px 30px;
+  width: 20%;
+  max-width: 256px;
+  height: auto;
+}
+
+.logowebright {
+  float: right;
+  position: relative;
+  margin: 5px 10px;
+  max-width: 450px;
+  width: auto;
+  height: auto;
+  border-radius: 20px;
+}
+
+.logowebleft {
+  float: left;
+  position: relative;
+  margin: 5px 10px;
+  margin-top: 60px;
+  max-width: 400px;
+  width: auto;
+  height: auto;
+}
+
+main p {
+  font-family: var(--font-sans);
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+/* START link: center inside each content block, but keep inside document flow */
+.start {
+  display: block;
+  margin: 18px auto 12px auto;
+  max-width: 420px;
+  padding: 8px 20px;
+  font-size: 40px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: green;
+  text-decoration: none;
+  border: 4px solid var(--black);
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  width: 100%;
+  background: var(--bg-dark);
+  border: 5px solid var(--black);
+  padding: 12px 0;
+}
+h2 {
+  color: white;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* ========== RESPONSIVE TUNING ========== */
+
+/* medium screens */
+@media (max-width: 1000px) {
+  .nadpis { width: 320px; }
+  #coin, #cash { max-width: 100px; top: 12px; }
+  .logowebleft, .logowebright { max-width: 420px; }
+  h1 { font-size: 56px; }
+}
+
+/* mobile: stack nav, adjust tutorial & logos, avoid overlap */
+@media (max-width: 600px) {
+
+  /* NAV: stacked under each other */
+  nav ul {
+    width: 100%;
+    margin: 0 auto;
+    padding: 8px 0;
+  }
+  nav ul li {
+    float: none;
+    display: block;
+    width: calc(100% - 40px);
+    margin: 8px auto;
+    box-sizing: border-box;
+  }
+
+  /* TUTORIAL adjustments to avoid overlap */
+  .tutorial {
+    padding: 12px 8px 18px 8px;
+    min-height: auto;
+  }
+  .podtutorial {
+    width: 90%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: auto;
+    padding-top: 72px; /* increased spacing so nadpis/text not hidden by icons */
+  }
+  .nadpis { width: 260px; margin-top: 6px; }
+
+  /* coin/cash: small icons in corners */
+  #coin, #cash {
+    width: 48px;
+    max-width: 48px;
+    top: 10px;
+  }
+  #coin { right: 12px; }
+  #cash { left: 12px; }
+
+  /* logos stop floating and go full-width block to avoid breaking layout */
+  .logoweb, .logowebleft, .logowebright {
+    float: none;
+    display: block;
+    width: 90%;
+    max-width: 360px;
+    margin: 10px auto;
+  }
+
+  .obsah { height: auto; padding-bottom: 18px; }
+
+  /* start smaller on mobile */
+  .start {
+    font-size: 28px;
+    max-width: 320px;
+    margin-top: 12px;
+  }
+
+  .tutorial p, .podtutorial p { font-size: 14px; margin: 10px auto; }
+  h1 { font-size: 46px; }
+}
+
+/* very small screens */
+@media (max-width: 420px) {
+  .logo img { width: 220px; }
+  nav ul li { width: calc(100% - 30px); margin: 6px auto; padding: 8px 12px; font-size: 16px; }
+  h1 { font-size: 34px; }
+  .start { font-size: 22px; max-width: 280px; }
+  .nadpis { width: 220px; }
+  .podtutorial { padding-top: 84px; }
+  .tutorial p, .podtutorial p { font-size: 13px; margin: 8px auto; }
+}
+
+/* ---------- Oprava překrývání START na desktopu (pouze PC) ---------- */
+
+/* Platí pouze pro širší obrazovky (desktop) */
+@media (min-width: 1001px) {
+  /* lehké zvýšení min-výšky všech obsahových bloků,
+     aby každý blok měl rezervu pod obrázky */
+  .obsah {
+    min-height: 620px;    /* původně height:525px; přepnuto na min-height */
+    height: auto;         /* aby se přizpůsoboval obsahu, ale nepřekrýval */
+    padding-bottom: 18px; /* rezervní prostor pod obsahem */
+  }
+
+  /* Pokud jsou obrázky příliš vysoké, omezíme jejich max výšku (zachová šířku) */
+  .logowebright, .logowebleft {
+    max-height: 360px;    /* upravte číslo pokud chcete větší/menší obrázky */
+    height: auto;
+    width: auto;          /* zachová proporce podle max-height */
+  }
+
+  /* START: vždy pod floats a nahoře dáme trochu mezery */
+  .start {
+    clear: both;          /* klíčové: posune tlačítko pod floatované obrázky */
+    margin-top: 18px;
+    position: relative;
+    z-index: 5;           /* zajistí, že je nad případnými dekoracemi */
+  }
+
+  /* Pokud chcete zvýraznit první dva bloky (konkrétně) dáme jim ještě větší výšku:
+     odkomentujte blok níže pokud bude potřeba silnější náprava pro první dva .obsah */
+  /*
+  .kontajnr > .obsah:nth-of-type(1),
+  .kontajnr > .obsah:nth-of-type(2) {
+    min-height: 700px;
+  }
+  */
+}/* Zaoblení pro obrázky v mainu (attapollcode.png atd.) */
+img.logowebleft,
+img.logowebright,
+img.logoweb {
+  display: block;     /* odstraní inline mezery, spolehlivější zaoblení */
+  max-width: 100%;    /* zajistí, že se obrázek nepřeteče z kontejneru */
+  height: auto;
+  border-radius: 20px; /* nastavte hodnotu podle potřeby */
+  overflow: hidden;   /* nic z něj nebude vyčnívat */
+}
+
+/* pokud chcete i černý rámeček jako u jiných prvků */
+img.logowebleft {
+  border: 3px solid #000; /* volitelné - nastavte tloušťku/rgb podle sebe */
+}
+
+/* ----- ZMENŠENÍ OBRÁZKŮ: desktop i mobil ----- */
+
+/* Desktop: zmenšíme velké obrázky v mainu, aby nepřečnívaly a nepřekrývaly obsah */
+@media (min-width: 1001px) {
+  /* logowebleft a logowebright budou menší než dřív */
+  .logowebleft {
+    max-width: 300px;   /* z původních ~400px -> 300px */
+    width: auto;
+    height: auto;
+    border-radius: 16px; /* pokud chcete, můžete zvýšit/snížit */
+  }
+
+  .logowebright {
+    max-width: 340px;   /* z původních ~450px -> 340px */
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  /* základní logoweb (logo vlevo) trochu zmenšit i na desktopu, aby nepřesahovalo */
+  .logoweb {
+    max-width: 180px;   /* dříve 256px / 20% - teď omezeno */
+    width: 18%;
+    height: auto;
+  }
+}
+
+/* Mobile: uděláme .logoweb přibližně poloviční oproti původnímu stavu,
+   a zajistíme, že ostatní obrázky nepřekryjí layout */
+@media (max-width: 600px) {
+  /* .logoweb bude ~50% své původní plochy na mobily */
+  .logoweb {
+    width: 45%;         /* zmenšení na cca polovinu šířky, centrované */
+    max-width: 120px;   /* horní limit */
+    margin-left: 8px;   /* mírný posun, aby nevypadal prilepený */
+  }
+
+  /* logowebleft/logowebright už byly blokové na mobile -- zmenšíme max šířku */
+  .logowebleft, .logowebright {
+    width: 90%;
+    max-width: 320px;   /* bezpečně menší než dříve */
+    margin: 10px auto;
+  }
+
+  /* Pokud by .obsah stále vyžadoval trochu více vertikální rezervy, necháme jej volně růst */
+  .obsah {
+    height: auto;
+  }
+}
+
+/* univerzální: vždy u obrázků zajistit responsivitu a hezké zaoblení */
+img.logoweb,
+img.logowebleft,
+img.logowebright {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* --- Oprava: zarovnání .logoweb na střed na mobilech --- */
+@media (max-width: 600px) {
+  .logoweb {
+    float: none;           /* vypneme float */
+    display: block;        /* blokový element */
+    margin: 10px auto;     /* automatické okraje = centrování */
+  }
+}
+
+/* --- Oprava vertikálního centrování v .podtutorial na PC --- */
+@media (min-width: 601px) {
+  .podtutorial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centrování svisle */
+    align-items: center;     /* centrování vodorovně */
+    height: 275px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .podtutorial .nadpis {
+    margin: 0 0 10px 0;   /* jen malá mezera dole */
+    position: static;     /* odstraníme posun "top:20px" */
+  }
+
+  .podtutorial p {
+    margin: 0;            /* žádný extra margin */
+    line-height: 1.4;     /* lepší čitelnost */
+  }
+}
+
+/* --- Odstranění rámečků z obrázků v mainu --- */
+.logoweb,
+.logowebleft,
+.logowebright {
+  border: none !important;
+}
+
+/* --- Blokový styl pro text v .podtutorial --- */
+
+a{
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 0, 0);
+}
